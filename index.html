@@ -123,8 +123,8 @@
   /* ── Panel ── */
   .panel {
     display: none;
-    background: #1a1a2e;
-    border: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(180deg, #0f172a, #1a1a2e);
+    border: 1px solid rgba(212,175,55,0.15);
     border-radius: 16px;
     width: 92vw;
     max-width: 580px;
@@ -206,10 +206,10 @@
     gap: 8px;
   }
   .btn-primary {
-    background: #2997ff;
-    color: #fff;
+    background: linear-gradient(135deg, #D4AF37, #C5A028);
+    color: #0f172a;
   }
-  .btn-primary:hover { background: #0a84ff; }
+  .btn-primary:hover { background: linear-gradient(135deg, #F5D060, #D4AF37); }
   .btn-secondary {
     background: rgba(255,255,255,0.08);
     color: #ccc;
@@ -706,9 +706,9 @@
     position: fixed;
     bottom: 20px; left: 50%;
     transform: translateX(-50%);
-    background: rgba(20,20,35,0.92);
+    background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(20,20,45,0.95));
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(212,175,55,0.2);
     border-radius: 14px;
     padding: 12px 24px;
     display: flex;
@@ -732,7 +732,7 @@
   }
   #hud-fill {
     height: 100%;
-    background: linear-gradient(90deg, #2997ff, #00d4aa);
+    background: linear-gradient(90deg, #D4AF37, #F5D060, #D4AF37);
     border-radius: 3px;
     width: 0%;
     transition: width 0.5s ease;
@@ -749,9 +749,9 @@
   #legend {
     position: fixed;
     top: 20px; left: 20px;
-    background: rgba(20,20,35,0.9);
+    background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(20,20,45,0.95));
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(212,175,55,0.2);
     border-radius: 12px;
     padding: 14px 20px;
     z-index: 50;
@@ -775,21 +775,33 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(20,20,35,0.9);
+    background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(20,20,45,0.95));
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 14px 24px;
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 14px;
+    padding: 16px 28px;
     z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  #title-bar h1 {
-    font-size: 15px;
-    color: #fff;
+  #title-bar .brand-mark {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  #title-bar .brand-text h1 {
+    font-size: 16px;
+    color: #D4AF37;
     font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: 'Georgia', 'Times New Roman', serif;
   }
-  #title-bar span {
+  #title-bar .brand-text span {
     font-size: 11px;
-    color: #666;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 </style>
 </head>
@@ -805,8 +817,30 @@
 
 <!-- Title -->
 <div id="title-bar">
-  <h1>Life Dreams Wealth</h1>
-  <span>360&deg; Interactive eLearning Prototype</span>
+  <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#D4AF37"/>
+        <stop offset="50%" style="stop-color:#F5D060"/>
+        <stop offset="100%" style="stop-color:#D4AF37"/>
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <circle cx="50" cy="50" r="38" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+    <!-- Diamond / gem shape -->
+    <polygon points="50,18 68,42 50,78 32,42" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="32" y1="42" x2="68" y2="42" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <line x1="50" y1="18" x2="42" y2="42" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6"/>
+    <line x1="50" y1="18" x2="58" y2="42" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6"/>
+    <line x1="42" y1="42" x2="50" y2="78" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+    <line x1="58" y1="42" x2="50" y2="78" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+    <!-- L D W letters -->
+    <text x="50" y="94" text-anchor="middle" fill="url(#goldGrad)" font-family="Georgia,serif" font-size="10" font-weight="700" letter-spacing="4">LDW</text>
+  </svg>
+  <div class="brand-text">
+    <h1>Life Dreams Wealth</h1>
+    <span>Financial Literacy &bull; 360&deg; Interactive</span>
+  </div>
 </div>
 
 <!-- Panorama -->
