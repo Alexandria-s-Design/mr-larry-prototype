@@ -1,3 +1,6 @@
+# Godot editor cache
+game/.godot/
+
 # Large files - keep in Google Drive
 context/website-assets/stock-photos/
 context/website-assets/Powtoons Header.mp4
