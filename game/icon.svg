@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="16" fill="#0F0F1A"/>
+  <text x="64" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#2A9D8F">LIFE</text>
+  <text x="64" y="58" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#C9A84C">DREAMS</text>
+  <text x="64" y="78" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#6B5B95">WEALTH</text>
+  <polygon points="64,88 44,108 84,108" fill="#C9A84C" opacity="0.8"/>
+  <polygon points="64,85 38,115 90,115" fill="none" stroke="#2A9D8F" stroke-width="2" opacity="0.6"/>
+</svg>

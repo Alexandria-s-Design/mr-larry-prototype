@@ -1,0 +1,201 @@
+[gd_scene load_steps=2 format=3 uid="uid://parent_portal"]
+
+[ext_resource type="Script" path="res://scripts/parent_portal.gd" id="1"]
+
+[node name="ParentPortal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.059, 0.059, 0.102, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = -20.0
+
+[node name="MainVBox" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="FamilyLabel" type="Label" parent="ScrollContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Family Dashboard"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.788, 0.659, 0.298, 1)
+theme_override_font_sizes/font_size = 28
+
+[node name="TaskSection" type="VBoxContainer" parent="ScrollContainer/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TaskHeader" type="Label" parent="ScrollContainer/MainVBox/TaskSection"]
+layout_mode = 2
+text = "WEEKLY TASKS"
+theme_override_colors/font_color = Color(0.165, 0.616, 0.561, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="TaskInputRow" type="HBoxContainer" parent="ScrollContainer/MainVBox/TaskSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TaskNameInput" type="LineEdit" parent="ScrollContainer/MainVBox/TaskSection/TaskInputRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 40)
+placeholder_text = "Task name (e.g., Clean room)"
+theme_override_font_sizes/font_size = 14
+
+[node name="TaskValueInput" type="SpinBox" parent="ScrollContainer/MainVBox/TaskSection/TaskInputRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(100, 40)
+min_value = 0.25
+max_value = 50.0
+step = 0.25
+value = 5.0
+prefix = "$"
+
+[node name="AddTaskButton" type="Button" parent="ScrollContainer/MainVBox/TaskSection/TaskInputRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(100, 40)
+text = "ADD TASK"
+theme_override_font_sizes/font_size = 14
+
+[node name="TaskList" type="VBoxContainer" parent="ScrollContainer/MainVBox/TaskSection"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AllocatorSection" type="VBoxContainer" parent="ScrollContainer/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AllocatorHeader" type="Label" parent="ScrollContainer/MainVBox/AllocatorSection"]
+layout_mode = 2
+text = "INCOME ALLOCATOR (Save / Spend / Share)"
+theme_override_colors/font_color = Color(0.42, 0.357, 0.584, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="AllocatorPanel" type="Panel" parent="ScrollContainer/MainVBox/AllocatorSection"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 200)
+
+[node name="AllocatorVBox" type="VBoxContainer" parent="ScrollContainer/MainVBox/AllocatorSection/AllocatorPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+theme_override_constants/separation = 8
+
+[node name="SavePctLabel" type="Label" parent="ScrollContainer/MainVBox/AllocatorSection/AllocatorPanel/AllocatorVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save: 40%"
+theme_override_colors/font_color = Color(0.165, 0.616, 0.561, 1)
+
+[node name="SaveSlider" type="HSlider" parent="ScrollContainer/MainVBox/AllocatorSection/AllocatorPanel/AllocatorVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.0
+max_value = 100.0
+value = 40.0
+
+[node name="SpendPctLabel" type="Label" parent="ScrollContainer/MainVBox/AllocatorSection/AllocatorPanel/AllocatorVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Spend: 40%"
+theme_override_colors/font_color = Color(0.788, 0.659, 0.298, 1)
+
+[node name="SpendSlider" type="HSlider" parent="ScrollContainer/MainVBox/AllocatorSection/AllocatorPanel/AllocatorVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.0
+max_value = 100.0
+value = 40.0
+
+[node name="SharePctLabel" type="Label" parent="ScrollContainer/MainVBox/AllocatorSection/AllocatorPanel/AllocatorVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Share: 20%"
+theme_override_colors/font_color = Color(0.42, 0.357, 0.584, 1)
+
+[node name="ShareSlider" type="HSlider" parent="ScrollContainer/MainVBox/AllocatorSection/AllocatorPanel/AllocatorVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.0
+max_value = 100.0
+value = 20.0
+
+[node name="PaySection" type="HBoxContainer" parent="ScrollContainer/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PayLabel" type="Label" parent="ScrollContainer/MainVBox/PaySection"]
+layout_mode = 2
+text = "Weekly Allowance:"
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="IncomeInput" type="SpinBox" parent="ScrollContainer/MainVBox/PaySection"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+min_value = 1.0
+max_value = 100.0
+step = 1.0
+value = 10.0
+prefix = "$"
+
+[node name="PayButton" type="Button" parent="ScrollContainer/MainVBox/PaySection"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(120, 45)
+text = "PAY DAY"
+theme_override_font_sizes/font_size = 16
+
+[node name="ProgressPanel" type="Panel" parent="ScrollContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 180)
+
+[node name="ProgressText" type="RichTextLabel" parent="ScrollContainer/MainVBox/ProgressPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+bbcode_enabled = true
+theme_override_colors/default_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/normal_font_size = 14
+
+[node name="BackButton" type="Button" parent="ScrollContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 45)
+text = "BACK TO MAIN MENU"
+theme_override_font_sizes/font_size = 14
